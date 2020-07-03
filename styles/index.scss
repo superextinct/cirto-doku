@@ -1,0 +1,121 @@
+@tailwind base;
+
+@font-face {
+    font-family: 'Fakt Pro';
+    src: url('/assets/fonts/FaktPro-Hair.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fakt Pro';
+    src: url('/assets/fonts/FaktPro-Light.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fakt Pro';
+    src: url('/assets/fonts/FaktPro-Blond.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fakt Pro';
+    src: url('/assets/fonts/FaktPro-Normal.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fakt Pro';
+    src: url('/assets/fonts/FaktPro-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fakt Pro';
+    src: url('/assets/fonts/FaktPro-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+@import "typography";
+@import "blocks";
+
+
+.notion {
+    @apply flex;
+    @apply flex-wrap;
+    @apply justify-end;
+}
+
+main {
+    @apply pt-16;
+    
+    @screen lg {
+        @apply pt-24;
+    }
+}
+
+span.mask, span.mask > .text {
+    @apply inline-block;
+}
+
+span.mask {
+    @apply overflow-hidden;
+    @apply align-bottom; 
+    @apply pt-4;  
+    
+    & > .text {
+        transition: opacity ease .3s, transform cubic-bezier(0.25, 1, 0.5, 1) .8s;
+    }
+}
+
+@for $i from 0 through 20 {
+    span.mask:nth-child(#{$i + 1}) .text {
+        transition-delay: 0.05s * $i;
+    }
+}
+
+[data-sal|='fade'] {
+    .text {
+        opacity: 0;
+        transform: translateY(4rem);
+    }
+
+    &.sal-animate .text {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    @apply inline-block;
+    @apply align-middle;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background: url('/assets/cirto.svg') no-repeat left center;
+    background-size: contain;
+}
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Your own custom utilities */
+
+

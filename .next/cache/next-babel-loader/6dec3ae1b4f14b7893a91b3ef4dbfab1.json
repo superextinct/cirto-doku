@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var DOC_TITLE = \"cirtō\";","map":{"version":3,"sources":["/Users/niklas/dev/doku/lib/constants.ts"],"names":["DOC_TITLE"],"mappings":"AAAA,OAAO,IAAMA,SAAS,GAAG,OAAlB","sourcesContent":["export const DOC_TITLE = \"cirtō\""]},"metadata":{},"sourceType":"module"}

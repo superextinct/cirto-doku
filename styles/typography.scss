@@ -1,0 +1,84 @@
+.notion-h1 {
+    @apply font-semibold;
+    @apply tracking-tighter;
+    @apply leading-none;
+    @apply mt-24;
+    @apply mb-8;
+    @apply text-4xl;
+
+    @screen md {
+      @apply text-6xl;
+    }
+
+    @screen lg {
+      @apply text-8xl;
+    }
+}
+
+.notion-h2 {
+    @apply font-normal;
+    @apply tracking-tight;
+    @apply leading-tight;
+    @apply text-2xl;
+    @apply mb-6;
+
+    @screen md {
+        @apply text-4xl;
+    }
+}
+
+.notion-h3 {
+    @apply text-gray-600;
+    @apply uppercase;
+    @apply leading-snug;
+    @apply tracking-wide;
+    @apply text-lg;
+    @apply mb-4;
+}
+
+.notion-text {
+    @apply text-gray-800;
+    @apply text-lg;
+    @apply whitespace-pre-wrap;
+    @apply mb-4;
+
+    @screen sm {
+        @apply text-xl;
+    }
+}
+
+p code {
+    @apply text-base;
+    @apply rounded-sm;
+    @apply bg-gray-100;
+    @apply text-blue-500;
+    @apply px-1;
+    @apply whitespace-no-wrap;
+}
+
+.notion-quote {
+    @apply whitespace-pre-wrap;
+    @apply break-words;
+    @apply text-3xl;
+    @apply text-gray-800;
+    @apply my-8;
+
+    @screen md {
+        @apply text-5xl;
+        @apply my-16;
+    }
+}
+
+.page-link {
+    @apply text-4xl;
+    @apply leading-tight;
+    
+    @screen sm {
+        @apply text-6xl;
+        @apply tracking-tight;
+    }
+
+    @screen md {
+        @apply text-8xl;
+    }
+}
