@@ -9,6 +9,7 @@
     "prismjs": "^1.20.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-h5-audio-player": "^3.2.0",
     "react-notion": "file:../react-notion/",
     "react-scroll-progress-bar": "^1.1.12",
     "sal.js": "^0.7.6",

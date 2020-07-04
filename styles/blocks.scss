@@ -353,6 +353,7 @@
     display: flex;
     overflow: hidden;
     user-select: none;
+    margin-left: auto;
   }
   
   .notion-bookmark > div:first-child {
@@ -530,7 +531,7 @@
   }
 }
 
-.notion > .notion-text {
+.notion > .notion-text, .notion-bookmark {
   @apply w-full;
 
   @screen sm {
@@ -643,5 +644,15 @@
 
   @screen md {
     @apply mt-16;
+  }
+}
+
+.rhap_container {
+  @screen sm {
+    @apply w-2/3 #{!important};
+  }
+
+  @screen lg {
+    @apply w-1/2 #{!important};
   }
 }

@@ -1,5 +1,6 @@
 import "../styles/index.scss";
 import "prismjs/themes/prism-tomorrow.css";
+import "react-h5-audio-player/lib/styles.css";
 import React, { useEffect } from "react";
 import sal from "sal.js";
 
