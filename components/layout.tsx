@@ -5,7 +5,7 @@ import ProgressBar from "react-scroll-progress-bar";
 export default function Layout({children}) {
     return (
         <>
-            <ProgressBar bgcolor="#edf2f7"/>
+            <ProgressBar bgcolor="#f4ea66" height="2px"/>
             <div className="min-h-screen">
                 <Header />
                 <main>{children}</main>
