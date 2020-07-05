@@ -215,18 +215,17 @@
   }
   
 .notion-list {
-  @apply text-lg;
-  @apply text-gray-800;
-  @apply pl-10;
+  @apply text-lg text-gray-800 pl-4;
+
+  @screen md {
+    @apply pl-10;
+  }
 
   li {
-    @apply mb-1;
-    @apply whitespace-pre-wrap;
+    @apply mb-1 whitespace-pre-wrap pl-8 relative;
 
     &::before {
-      @apply text-gray-400;
-      @apply inline-block;
-      @apply mr-4;
+      @apply text-gray-400 inline-block mr-4 absolute left-0;
     }
   }
 }
