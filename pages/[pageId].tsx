@@ -17,14 +17,44 @@ export async function getServerSideProps(context) {
     `https://notion-api.splitbee.io/v1/page/${pageId}`
   ).then(res => res.json());
 
+  let parentPages = [];
+  let parent: any = data[Object.keys(data)[0]]?.value.parent_id;
+  
+  while (parent) {
+    const parentBlocks: BlockMapType = await fetch(
+      `https://notion-api.splitbee.io/v1/page/${parent}`
+    ).then(res => res.json());
+
+    if (Object.keys(parentBlocks).length > 0) {
+      parentPages.push({
+        id: Object.keys(parentBlocks)[0],
+        title: (parentBlocks[Object.keys(parentBlocks)[0]]?.value as any).properties.title[0][0]
+      });
+
+      parent = parentBlocks[Object.keys(parentBlocks)[0]]?.value.parent_id;
+    } else {
+      parent = false;
+    }
+  }
+
+  parentPages.reverse().shift();
+
+  if (Object.keys(data).length > 0) {
+    parentPages.push({
+      id: Object.keys(data)[0],
+      title: data[Object.keys(data)[0]]?.value.properties.title[0][0]
+    });
+  }
+
   return {
     props: {
-      blockMap: data
+      blockMap: data,
+      breadcrumb: parentPages
     }
   };
 }
 
-const NotionPage = ({ blockMap }) => {
+const NotionPage = ({ blockMap, breadcrumb }) => {
   if (!blockMap || Object.keys(blockMap).length === 0) {
     return (
       <div>
@@ -37,9 +67,9 @@ const NotionPage = ({ blockMap }) => {
 
   const title =
     blockMap[Object.keys(blockMap)[0]]?.value.properties.title[0][0];
-
+  
   return (
-    <Layout>
+    <Layout breadcrumb={breadcrumb}>
       <Head>
         <title>{title} – { DOC_TITLE }</title>
       </Head>

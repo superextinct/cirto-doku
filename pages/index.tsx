@@ -21,7 +21,7 @@ export async function getStaticProps() {
 
 const Home = ({ blockMap }) => {
     return (
-        <Layout>
+        <Layout breadcrumb={[]}>
           <Head>
             <title>{ DOC_TITLE }</title>
           </Head>

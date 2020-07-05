@@ -112,6 +112,20 @@ span.mask {
     background-size: contain;
 }
 
+.breadcrumb {
+    @apply inline-block ml-6 align-bottom text-gray-500 leading-4 text-lg;
+
+    li {
+        @apply inline-block ml-4; 
+
+        &::before {
+            @apply inline-block w-6 text-gray-300;
+            content: "/";
+        }
+    }
+
+}
+
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */
