@@ -82,3 +82,14 @@ p code {
         @apply text-8xl;
     }
 }
+
+.notion-link {
+    text-decoration: none;
+    border-bottom: none;
+    box-shadow: inset 0 -0.5em 0 #fbee6f;
+    transition: box-shadow 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+
+    &:hover {
+        box-shadow: inset 0 -1.25em 0 #fbee6f;
+    }
+}
