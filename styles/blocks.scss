@@ -215,7 +215,7 @@
   }
   
 .notion-list {
-  @apply text-lg text-gray-800 pl-4;
+  @apply text-lg text-gray-800 pl-4 mb-4;
 
   @screen md {
     @apply pl-10;
@@ -516,7 +516,10 @@
   }
 }
 
-.notion > .notion-h3 {
+
+.notion > .download-link,
+.notion > .notion-toggle,
+.notion-bookmark {
   @apply w-full;
 
   @screen sm {
@@ -529,19 +532,29 @@
 }
 
 .notion > .notion-text,
-.notion > .download-link,
-.notion > .notion-toggle,
-.notion-bookmark {
+.notion > .notion-h3 {
   @apply w-full;
 
   @screen sm {
-    @apply w-2/3;
+    padding-left: 33.333%;
   }
 
   @screen lg {
-    @apply w-1/2;
+    padding-left: 50%;
   }
 }
+
+
+.notion > .notion-h2 + .notion-text {
+  @screen sm {
+    @apply w-2/3 pl-0;
+  }
+
+  @screen lg {
+    @apply w-1/2 pl-0;
+  }
+}
+
 
 .notion-table {
   @apply w-full;
@@ -616,7 +629,7 @@
   }
 
   @screen lg {
-    @apply w-2/3;
+    @apply w-3/4;
   }
 
   &::before, &::after {
