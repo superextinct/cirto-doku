@@ -1,3 +1,4 @@
+.DS_Store
 .next/
 public/assets/fonts
 node_modules/
