@@ -10,7 +10,6 @@ export default function App({ Component, pageProps }) {
       if(heading.querySelectorAll(".mask").length == 0)
         heading.innerHTML = heading.innerHTML.replace(/[A-Za-z0-9\-_.,!?äöüßÄÖÜ]+/g, `<span class="mask"><span class="text">$&</span></span>`);
     });
-    console.log("effect");
     sal();
   });
 
