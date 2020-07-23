@@ -107,8 +107,12 @@
     display: block;
     object-fit: cover;
     width: 100%;
-    height: 30vh;
+    height: 100vh;
     padding: 0;
+
+    &[src$=".svg"] {
+      object-fit: contain;
+    }
   }
   
   .notion-page {
@@ -682,5 +686,15 @@
   
   small {
     @apply pl-4 text-gray-500;
+  }
+}
+
+.notion-cover {
+  @apply absolute w-full left-0 right-0;
+  top: 0;
+  height: 100vh;
+
+  + .notion-h1 {
+    height: 85vh;
   }
 }
