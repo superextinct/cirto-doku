@@ -565,7 +565,8 @@
   }
 }
 
-.notion > .notion-h2 + .notion-text {
+.notion > .notion-h2 + .notion-text,
+.notion > .notion-h2 + .notion-list {
   @screen sm {
     @apply w-2/3 ml-0;
   }
