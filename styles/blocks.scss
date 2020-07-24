@@ -631,8 +631,20 @@
   }
 }
 
-.notion-column > .page-link .arrow {
-  @apply opacity-100 translate-x-0;
+.notion-column > .page-link {
+  @apply mb-2;
+  
+  .arrow {
+    @apply opacity-100 translate-x-0;
+  }
+
+  &:hover .arrow {
+    @apply translate-x-2;
+  }
+
+  & ~ .page-link:last-of-type {
+    @apply mb-4;
+  }
 }
 
 .notion-callout {
