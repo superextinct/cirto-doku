@@ -219,10 +219,10 @@
   }
   
 .notion-list {
-  @apply text-lg text-gray-800 pl-4 mb-2;
+  @apply text-lg text-gray-800 pl-10 mb-2;
 
   @screen md {
-    @apply pl-10;
+    @apply pl-16;
   }
 
   li {
@@ -460,7 +460,7 @@
   }
   
   .notion-toggle {
-    @apply pl-10 mb-2;
+    @apply pl-16 mb-2;
     
     summary {
       @apply text-lg text-gray-800 cursor-pointer outline-none;
@@ -514,7 +514,8 @@
     padding: 0 10px;
   }
 
-.notion > .notion-list {
+.notion > .notion-list,
+.notion > .notion-toggle {
   @apply w-full;
 
   @screen md {
@@ -551,12 +552,12 @@
 .notion > .notion-text,
 .notion > .notion-h3,
 .notion > .download-link,
-.notion > .notion-toggle,
 .notion-bookmark {
   @apply w-full;
 
   @screen sm {
     margin-left: 33.333%;
+    padding-left: 23px;
   }
 
   @screen lg {
@@ -566,11 +567,11 @@
 
 .notion > .notion-h2 + .notion-text {
   @screen sm {
-    @apply w-2/3 pl-0;
+    @apply w-2/3 ml-0;
   }
 
   @screen lg {
-    @apply w-1/2 pl-0;
+    @apply w-1/2 ml-0;
   }
 }
 
@@ -628,6 +629,10 @@
           @apply translate-x-2;
       }
   }
+}
+
+.notion-column > .page-link .arrow {
+  @apply opacity-100 translate-x-0;
 }
 
 .notion-callout {
