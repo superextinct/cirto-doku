@@ -26,12 +26,23 @@ export async function getServerSideProps(context) {
     ).then(res => res.json());
 
     if (Object.keys(parentBlocks).length > 0) {
+      let pageBlock = 0;
+
+      if ((parentBlocks[Object.keys(parentBlocks)[0]]?.value as any).type != "page") {
+        for (let i=1; i<Object.keys(parentBlocks).length; i++) {
+          if((parentBlocks[Object.keys(parentBlocks)[i]]?.value as any).type == "page") {
+            pageBlock = i;
+            break;
+          }
+        }
+      }
+
       parentPages.push({
-        id: Object.keys(parentBlocks)[0],
-        title: (parentBlocks[Object.keys(parentBlocks)[0]]?.value as any).properties.title[0][0]
+        id: Object.keys(parentBlocks)[pageBlock],
+        title: (parentBlocks[Object.keys(parentBlocks)[pageBlock]]?.value as any).properties.title[0][0]
       });
 
-      parent = parentBlocks[Object.keys(parentBlocks)[0]]?.value.parent_id;
+      parent = parentBlocks[Object.keys(parentBlocks)[pageBlock]]?.value.parent_id;
     } else {
       parent = false;
     }
