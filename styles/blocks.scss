@@ -504,7 +504,7 @@
 
     iframe {
       @apply w-full;
-      min-height: 40vh;
+      min-height: 60vh;
     }
   }
 
@@ -641,13 +641,13 @@
   @apply pl-24;
   @apply relative;
 
-  @apply text-3xl;
+  @apply text-2xl;
   @apply my-12;
 
   @apply cursor-move;
 
   @screen md {
-    @apply text-5xl;
+    @apply text-4xl;
     @apply w-4/5;
     @apply my-24;
   }
