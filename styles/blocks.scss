@@ -219,7 +219,7 @@
   }
   
 .notion-list {
-  @apply text-lg text-gray-800 pl-4 mb-4;
+  @apply text-lg text-gray-800 pl-4 mb-2;
 
   @screen md {
     @apply pl-10;
@@ -460,10 +460,38 @@
   }
   
   .notion-toggle {
-    padding: 3px 2px;
+    @apply pl-10 mb-2;
+    
+    summary {
+      @apply text-lg text-gray-800 cursor-pointer outline-none;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &::before {
+        content: "▸";
+        @apply inline-block text-gray-400;
+        width: 2rem;
+      }
+    }
+
+    &[open] summary::before {
+      content: "▾";
+    }
+
+    > div {
+      @apply ml-8 mt-2;
+      
+      p {
+        @apply text-gray-500 text-base;
+      }
+    }
   }
-  .notion-toggle > div {
-    margin-left: 1.1em;
+
+  .notion > .notion-toggle + .notion-toggle:last-of-type,
+  .notion > .notion-list + .notion-list:last-of-type {
+    @apply mb-6;
   }
   
   .notion-miro-embed {
@@ -520,34 +548,21 @@
   }
 }
 
-
+.notion > .notion-text,
+.notion > .notion-h3,
 .notion > .download-link,
 .notion > .notion-toggle,
 .notion-bookmark {
   @apply w-full;
 
   @screen sm {
-    padding-left: 33.333%;
+    margin-left: 33.333%;
   }
 
   @screen lg {
-    padding-left: 50%;
+    margin-left: 50%;
   }
 }
-
-.notion > .notion-text,
-.notion > .notion-h3 {
-  @apply w-full;
-
-  @screen sm {
-    padding-left: 33.333%;
-  }
-
-  @screen lg {
-    padding-left: 50%;
-  }
-}
-
 
 .notion > .notion-h2 + .notion-text {
   @screen sm {
