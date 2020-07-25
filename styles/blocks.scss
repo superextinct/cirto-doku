@@ -296,16 +296,25 @@
   }
   
   .notion-code {
-    padding: 30px 16px 30px 20px;
-    margin: 4px 0;
+    @apply w-full overflow-x-scroll;
+    padding-left: 23px;
+
     tab-size: 2;
-    font-size: 85%;
     display: block;
-    background: rgb(247, 246, 243);
     font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier,
       monospace;
-    box-sizing: border-box;
-    overflow-x: scroll;
+
+    @screen md {
+      @apply w-2/3;
+    }
+
+    @screen lg {
+      @apply w-1/2;
+    }
+    
+    pre {
+      @apply bg-gray-100 p-6 #{!important};
+    }
   }
   
   .notion-column {
