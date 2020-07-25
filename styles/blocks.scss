@@ -469,13 +469,10 @@
   }
   
   .notion-image-caption {
-    padding: 6px 0px;
+    @apply p-0 mt-6 mb-4 text-lg text-gray-500;
     white-space: pre-wrap;
     word-break: break-word;
     caret-color: rgb(55, 53, 47);
-    font-size: 14px;
-    line-height: 1.4;
-    color: rgba(55, 53, 47, 0.6);
   }
   
   .notion-toggle {
