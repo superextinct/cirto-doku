@@ -265,6 +265,7 @@
 }
 
   .notion-asset-wrapper {
+    @apply w-full;
     @apply mr-auto;
     @apply mb-6;
     
@@ -355,7 +356,6 @@
   
   .notion-bookmark {
     margin: 4px 0;
-    width: 100%;
     box-sizing: border-box;
     text-decoration: none;
     border: 1px solid rgba(55, 53, 47, 0.16);
@@ -364,6 +364,16 @@
     overflow: hidden;
     user-select: none;
     margin-left: auto;
+    
+    @apply w-full;
+
+    @screen md {
+      @apply w-2/3;
+    }
+
+    @screen lg {
+      @apply w-1/2;
+    }
   }
   
   .notion-bookmark > div:first-child {
@@ -560,8 +570,7 @@
 
 .notion > .notion-text,
 .notion > .notion-h3,
-.notion > .download-link,
-.notion-bookmark {
+.notion > .download-link {
   @apply w-full;
 
   @screen sm {
@@ -575,7 +584,8 @@
 }
 
 .notion > .notion-h2 + .notion-text,
-.notion > .notion-h2 + .notion-list {
+.notion > .notion-h2 + .notion-list,
+.notion > .notion-h2 + .notion-h3 {
   @screen sm {
     @apply w-2/3 ml-0;
   }
