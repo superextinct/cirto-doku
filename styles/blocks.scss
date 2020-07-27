@@ -553,7 +553,8 @@
   }
 }
 
-.notion > .notion-h2 {
+.notion > .notion-h2,
+.notion > .download-link {
   @apply w-full;
 
   @screen sm {
@@ -590,6 +591,16 @@
   @screen lg {
     @apply w-1/2 ml-0;
   }
+}
+
+.notion-h2,
+.notion-h2 + .notion-text,
+.notion-h2 + .notion-list {
+    @apply mt-12;
+}
+
+.notion-h2 + .notion-list {
+  @apply flex items-end;
 }
 
 
@@ -729,9 +740,10 @@
 }
 
 .download-link {
-  background: url(/assets/paperclip.svg) left center no-repeat;
+  background: url(/assets/paperclip.svg) 23px center no-repeat;
   background-size: contain;
-  @apply pl-6 pt-1 text-xl leading-6;
+  @apply pl-12 #{!important};
+  @apply pt-1 text-xl leading-6;
   
   small {
     @apply pl-4 text-gray-500;

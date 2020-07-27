@@ -28,11 +28,6 @@
     }
 }
 
-.notion-h2,
-.notion-h2 + .notion-text {
-    @apply mt-12;
-}
-
 .notion-h3 {
     @apply text-gray-600;
     @apply uppercase;
