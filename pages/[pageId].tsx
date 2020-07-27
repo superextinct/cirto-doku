@@ -53,7 +53,7 @@ export async function getServerSideProps(context) {
   if (Object.keys(data).length > 0) {
     parentPages.push({
       id: Object.keys(data)[0],
-      title: data[Object.keys(data)[0]]?.value.properties.title[0][0]
+      title: (data[Object.keys(data)[0]]?.value as any).properties.title[0][0]
     });
   }
 
