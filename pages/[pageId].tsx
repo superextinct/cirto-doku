@@ -1,4 +1,5 @@
-  
+import fs from "fs";  
+import { join } from "path";
 import { NotionRenderer, BlockMapType } from "react-notion";
 import { DOC_TITLE } from "../lib/constants";
 import Container from "../components/container";
@@ -6,8 +7,8 @@ import Head from "next/head";
 import Layout from "../components/layout";
 import fetch from "node-fetch";
 
-export async function getServerSideProps(context) {
-  const pageId = context.params?.pageId;
+export async function getStaticProps(context) {
+  const pageId = context.params?.pageId.replace("-", "");
 
   if (!pageId) {
     return;
@@ -62,6 +63,23 @@ export async function getServerSideProps(context) {
       blockMap: data,
       breadcrumb: parentPages
     }
+  };
+}
+
+export async function getStaticPaths() {
+  const path = join(process.cwd(), "pages.json");
+  const pages = fs.readFileSync(path, "utf-8");
+  const data = JSON.parse(pages);
+
+  return {
+    paths: data.hashes.map( (page) => {
+      return {
+        params: {
+          pageId: page
+        }
+      };
+    }),
+    fallback: false
   };
 }
 
